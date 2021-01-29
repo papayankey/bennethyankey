@@ -13,20 +13,13 @@ import { makeStyles, Theme } from '@material-ui/core';
 
 // components
 import { Form } from './Form';
-import { Image } from '../../common';
+import { Image, Layout } from '../../common';
 
 // image
 import googleMap from '../../assets/images/google-map.png';
 
 // styles
 const useStyles = makeStyles((theme: Theme) => ({
-  container: {
-    padding: theme.spacing(10, 0, 10),
-    textAlign: 'center',
-    '& > *:not(:last-child)': {
-      marginBottom: theme.spacing(4),
-    },
-  },
   mapGridItem: {
     position: 'relative',
   },
@@ -60,42 +53,38 @@ function Contact() {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <Container>
-        <Typography variant="h5">Interested in what you see?</Typography>
-        <Typography>
-          I’m always open to discussing project or collaboration opportunities
-        </Typography>
-        <Grid container spacing={5}>
-          <Grid item md={6}>
-            <Form />
-          </Grid>
-          <Grid item md={6} className={classes.mapGridItem}>
-            <div className={classes.mapOverlay}>
-              <div className={classes.overlayContent}>
-                <LocationOnIcon />
-                <EmailIcon />
-                <CallIcon />
-              </div>
-              <div
-                className={`${classes.overlayContent} ${classes.overlayText}`}
-              >
-                <Typography>Koforidua - Ghana</Typography>
-                <Typography>yankeybenneth@gmail.com</Typography>
-                <Typography>+233 500 083 455</Typography>
-              </div>
-            </div>
-            <Image
-              src={googleMap}
-              alt="google map"
-              title="google map"
-              height={400}
-              variant="outlined"
-            />
-          </Grid>
+    <Layout>
+      <Typography variant="h5">Interested in what you see?</Typography>
+      <Typography>
+        I’m always open to discussing project or collaboration opportunities
+      </Typography>
+      <Grid container spacing={5}>
+        <Grid item md={6}>
+          <Form />
         </Grid>
-      </Container>
-    </div>
+        <Grid item md={6} className={classes.mapGridItem}>
+          <div className={classes.mapOverlay}>
+            <div className={classes.overlayContent}>
+              <LocationOnIcon />
+              <EmailIcon />
+              <CallIcon />
+            </div>
+            <div className={`${classes.overlayContent} ${classes.overlayText}`}>
+              <Typography>Koforidua - Ghana</Typography>
+              <Typography>yankeybenneth@gmail.com</Typography>
+              <Typography>+233 500 083 455</Typography>
+            </div>
+          </div>
+          <Image
+            src={googleMap}
+            alt="google map"
+            title="google map"
+            height={400}
+            variant="outlined"
+          />
+        </Grid>
+      </Grid>
+    </Layout>
   );
 }
 

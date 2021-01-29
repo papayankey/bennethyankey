@@ -8,7 +8,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
 // components
-import { Image } from '../../common';
+import { Image, Layout } from '../../common';
 
 // data
 import { images as imageData } from './data';
@@ -19,10 +19,6 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       padding: theme.spacing(10, 0),
       backgroundColor: theme.palette.grey[100],
-      textAlign: 'center',
-      '& > *:not(:last-child)': {
-        marginBottom: theme.spacing(4),
-      },
       [theme.breakpoints.up('md')]: {
         padding: theme.spacing(10),
       },
@@ -53,26 +49,24 @@ function Portfolio() {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <Container>
-        <Typography variant="h5">My Recent Works</Typography>
-        <Typography>
-          Here are few projects I have worked on recently. Want to see more? Get
-          in touch
-        </Typography>
-        <Grid container spacing={3}>
-          {imageData.map((data, i) => (
-            <Grid item xs={12} sm={6} md={4} className={classes.imageContainer}>
-              <div className={classes.overlay} />
-              <Image key={i} {...data} />
-            </Grid>
-          ))}
-        </Grid>
-        <Button variant="contained" size="large">
-          Get more on github
-        </Button>
-      </Container>
-    </div>
+    <Layout className={classes.container}>
+      <Typography variant="h5">My Recent Works</Typography>
+      <Typography>
+        Here are few projects I have worked on recently. Want to see more? Get
+        in touch
+      </Typography>
+      <Grid container spacing={3}>
+        {imageData.map((data, i) => (
+          <Grid item xs={12} sm={6} md={4} className={classes.imageContainer}>
+            <div className={classes.overlay} />
+            <Image key={i} {...data} />
+          </Grid>
+        ))}
+      </Grid>
+      <Button variant="contained" size="large">
+        Get more on github
+      </Button>
+    </Layout>
   );
 }
 

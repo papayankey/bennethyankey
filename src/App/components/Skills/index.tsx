@@ -9,6 +9,9 @@ import Container from '@material-ui/core/Container';
 // material utils
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
+// components
+import { Layout } from '../../common';
+
 // data
 import { data, IData } from './data';
 
@@ -17,10 +20,6 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       padding: theme.spacing(10, 0, 0),
-      textAlign: 'center',
-      '& > *:not(:last-child)': {
-        marginBottom: theme.spacing(4),
-      },
     },
     card: {
       backgroundColor: 'transparent',
@@ -57,17 +56,15 @@ function Skills() {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
-      <Container>
-        <Typography variant="h5">What I Can Do</Typography>
-        <Typography>Here are all the services I can offer</Typography>
-        <Grid container spacing={1} style={{ marginTop: 48 }}>
-          {data.map(item => (
-            <Skill key={item.id} {...item} />
-          ))}
-        </Grid>
-      </Container>
-    </div>
+    <Layout className={classes.container}>
+      <Typography variant="h5">What I Can Do</Typography>
+      <Typography>Here are all the services I can offer</Typography>
+      <Grid container spacing={1} style={{ marginTop: 48 }}>
+        {data.map(item => (
+          <Skill key={item.id} {...item} />
+        ))}
+      </Grid>
+    </Layout>
   );
 }
 

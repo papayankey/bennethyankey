@@ -4,16 +4,15 @@ import Typography from '@material-ui/core/Typography';
 // material utils
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
+// components
+import { Layout } from '../../common';
+
 // styles
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    container: {
+    layout: {
       backgroundColor: theme.palette.grey[100],
       padding: theme.spacing(5, 0, 5),
-      textAlign: 'center',
-      '& > *:not(:last-child)': {
-        marginBottom: theme.spacing(4),
-      },
     },
   })
 );
@@ -22,9 +21,9 @@ function Footer() {
   const classes = useStyles();
 
   return (
-    <div className={classes.container}>
+    <Layout className={classes.layout}>
       <Typography variant="h6">Learning, Mentoring & Building</Typography>
-    </div>
+    </Layout>
   );
 }
 
