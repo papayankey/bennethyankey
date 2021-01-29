@@ -1,7 +1,6 @@
 // material components
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
 
 // material icons
 import LocationOnIcon from '@material-ui/icons/LocationOnOutlined';
@@ -46,6 +45,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   overlayText: {
     textAlign: 'left',
     marginLeft: theme.spacing(3),
+    '& > p': {
+      color: theme.palette.common.white,
+    },
   },
 }));
 

@@ -45,7 +45,7 @@ function About() {
           placeat quisquam nostrum.
         </Typography>
         <Button variant="outlined" size="large" className={classes.button}>
-          GET RESUME
+          Get Resume
         </Button>
       </div>
       <Divider />
