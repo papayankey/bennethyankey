@@ -5,14 +5,14 @@ import easyBank from '../../assets/images/easy-bank.png';
 import managed from '../../assets/images/managed.png';
 import socialDashboard from '../../assets/images/social-dashboard.png';
 
-interface ImageData {
+export interface ImageInterface {
   src: string;
   title: string;
   alt: string;
 }
 
 // images
-const images: ImageData[] = [
+const images: ImageInterface[] = [
   {
     src: bookmark,
     title: 'bookmark',
