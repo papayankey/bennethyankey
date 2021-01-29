@@ -1,3 +1,3 @@
-# Porftolio
+# Portfolio
 
 ## initial commit
