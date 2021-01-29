@@ -21,6 +21,11 @@ const overrides: Overrides = {
       padding: '10px 0',
     },
   },
+  MuiButton: {
+    root: {
+      textTransform: 'capitalize',
+    },
+  },
 };
 
 export { overrides };

@@ -2,11 +2,12 @@ import { Palette } from '@material-ui/core/styles/createPalette';
 import { TypographyOptions } from '@material-ui/core/styles/createTypography';
 
 const typography = (palette: Palette): TypographyOptions => ({
-  allVariants: {
-    fontFamily: 'Quicksand',
-  },
-  h1: {
+  h5: {
     fontWeight: 700,
+  },
+  body1: {
+    fontFamily: 'Quicksand',
+    color: palette.grey[600],
   },
 });
 
