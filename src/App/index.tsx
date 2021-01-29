@@ -16,9 +16,6 @@ import {
   Footer,
 } from './components';
 
-// fonts
-import '@fontsource/quicksand/400.css';
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
