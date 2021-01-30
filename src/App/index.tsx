@@ -26,10 +26,12 @@ function App() {
         <Hero />
         <About />
         <Skills />
-        <Portfolio />
-        <Contact />
-        <Footer />
       </Container>
+      <Portfolio />
+      <Container>
+        <Contact />
+      </Container>
+      <Footer />
     </ThemeProvider>
   );
 }
