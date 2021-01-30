@@ -4,6 +4,7 @@ import App from './App';
 
 // fonts
 import '@fontsource/quicksand/400.css';
+import '@fontsource/quicksand/700.css';
 
 ReactDOM.render(
   <React.StrictMode>
