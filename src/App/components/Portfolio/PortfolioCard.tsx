@@ -3,7 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 // material utils
-import { makeStyles, Theme, createStyles } from '@material-ui/core';
+import { makeStyles, Theme, createStyles, capitalize } from '@material-ui/core';
 
 // components
 import { Image } from '../../common';
@@ -17,11 +17,12 @@ const useStyles = makeStyles((theme: Theme) =>
     overlayContainer: {
       position: 'relative',
       overflow: 'hidden',
+      boxShadow: theme.shadows[5],
       '&:hover': {
         '& $overlay, & $buttons': {
-          opacity: 0.98,
+          opacity: 0.97,
         },
-        '& $summary, & $title': {
+        '& $summary, & $title, & $stacks span': {
           transform: 'translate(0)',
         },
       },
@@ -36,26 +37,30 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       padding: theme.spacing(0, 3),
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: theme.palette.grey['700'],
+      backgroundColor: theme.palette.secondary.main,
       opacity: 0,
       transition: theme.transitions.create('opacity', {
         duration: 600,
         easing: theme.transitions.easing.easeInOut,
       }),
-      '& *': {
-        color: theme.palette.common.white,
-      },
     },
     summary: {
       marginTop: theme.spacing(1),
-      transform: 'translateX(-100%)',
+    },
+    title: {
+      fontSize: '1.5rem',
+      color: theme.palette.primary.main,
+      fontWeight: 700,
+    },
+    'position-right': {
+      transform: 'translateX(100%)',
       transition: theme.transitions.create('transform', {
         duration: 500,
         easing: theme.transitions.easing.easeInOut,
       }),
     },
-    title: {
-      transform: 'translateX(100%)',
+    'position-left': {
+      transform: 'translateX(-100%)',
       transition: theme.transitions.create('transform', {
         duration: 500,
         easing: theme.transitions.easing.easeInOut,
@@ -68,32 +73,41 @@ const useStyles = makeStyles((theme: Theme) =>
         duration: 500,
         easing: theme.transitions.easing.easeInOut,
       }),
-      '& .MuiButton-outlined': {
-        borderRadius: 0,
-        border: `1px solid ${theme.palette.common.white}`,
+      '& .MuiButton-contained': {
+        fontWeight: 700,
+        '&:hover': {
+          backgroundColor: theme.palette.primary.main,
+          color: theme.palette.background.default,
+        },
         '&:first-child': {
           marginRight: theme.spacing(2),
-          backgroundColor: theme.palette.common.white,
-          '& *': {
-            color: theme.palette.grey['700'],
-          },
-          '&:hover': {
-            backgroundColor: theme.palette.grey['700'],
-            '& *': {
-              color: theme.palette.common.white,
-            },
-          },
         },
-        '&:hover': {
-          backgroundColor: theme.palette.common.white,
-          '& *': {
-            color: theme.palette.grey['700'],
-          },
-        },
+      },
+    },
+    stacks: {
+      marginTop: theme.spacing(1.5),
+      color: theme.palette.background.default,
+      '& > span': {
+        display: 'block',
+        fontWeight: 700,
+      },
+      '& span:first-child': {
+        color: theme.palette.primary.main,
       },
     },
   })
 );
+
+function formatTitle(value: string) {
+  const isHyphenated = /-/g.test(value);
+  if (isHyphenated) {
+    return value
+      .split('-')
+      .map(str => capitalize(str))
+      .join(' ');
+  }
+  return capitalize(value);
+}
 
 interface PortfolioCardInterface {
   index: number;
@@ -104,25 +118,61 @@ function PortfolioCard(props: PortfolioCardInterface) {
   const { data, index } = props;
   const classes = useStyles();
 
-  const { title, summary } = data;
+  const { title, summary, stack, demo, code } = data;
 
   return (
     <div className={classes.overlayContainer}>
       <div className={classes.overlay}>
-        <Typography variant="h5" className={classes.title}>
-          {title}
+        <Typography
+          variant="h5"
+          className={`${classes.title} ${classes['position-right']}`}
+        >
+          {formatTitle(title)}
         </Typography>
-        <Typography className={classes.summary}>{summary}</Typography>
+        <Typography
+          variant="body2"
+          className={`${classes.summary} ${classes['position-left']}`}
+        >
+          {summary}
+        </Typography>
+        <Typography variant="body2" className={classes.stacks}>
+          <Typography
+            variant="inherit"
+            component="span"
+            className={classes['position-right']}
+          >
+            Stack Used
+          </Typography>
+          <Typography
+            variant="inherit"
+            component="span"
+            className={classes['position-left']}
+          >
+            {stack}
+          </Typography>
+        </Typography>
         <div className={classes.buttons}>
-          <Button variant="outlined" size="medium">
+          <Button
+            href={demo}
+            target="blank"
+            variant="contained"
+            size="large"
+            color="secondary"
+          >
             Demo
           </Button>
-          <Button variant="outlined" size="medium">
+          <Button
+            href={code}
+            target="blank"
+            variant="contained"
+            size="large"
+            color="secondary"
+          >
             Code
           </Button>
         </div>
       </div>
-      <Image key={index} {...data} />
+      <Image key={index} {...data} height={250} />
     </div>
   );
 }
