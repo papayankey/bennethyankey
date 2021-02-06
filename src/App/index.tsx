@@ -1,6 +1,5 @@
 // material components
 import CSSBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
 
 // material utils
 import { ThemeProvider } from '@material-ui/core';
@@ -16,21 +15,20 @@ import {
   Contact,
   Footer,
 } from './components';
+import { Main } from './common';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CSSBaseline />
       <NavBar />
-      <Container>
+      <Main>
         <Hero />
         <About />
         <Skills />
-      </Container>
-      <Portfolio />
-      <Container>
+        <Portfolio />
         <Contact />
-      </Container>
+      </Main>
       <Footer />
     </ThemeProvider>
   );
