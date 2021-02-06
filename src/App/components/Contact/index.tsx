@@ -32,13 +32,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'absolute',
     top: 'calc(50% - 100px)',
     left: 'calc(50% - 40%)',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: theme.palette.grey[800],
-    opacity: 0.85,
-    color: theme.palette.common.white,
+    borderRadius: theme.shape.borderRadius * 2,
+    backgroundColor: theme.palette.secondary.main,
+    opacity: 0.9,
+    color: theme.palette.text.primary,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    userSelect: 'none',
   },
   overlayContent: {
     display: 'flex',
@@ -50,9 +51,6 @@ const useStyles = makeStyles((theme: Theme) => ({
   overlayText: {
     textAlign: 'left',
     marginLeft: theme.spacing(3),
-    '& > p': {
-      color: theme.palette.common.white,
-    },
   },
 }));
 
@@ -72,10 +70,10 @@ function Contact() {
               opportunities.
             </Typography>
             <Grid container spacing={5}>
-              <Grid item md={6}>
+              <Grid item xs={12} md={6}>
                 <Form />
               </Grid>
-              <Grid item md={6} className={classes.mapGridItem}>
+              <Grid item xs={12} md={6} className={classes.mapGridItem}>
                 <div className={classes.mapOverlay}>
                   <div className={classes.overlayContent}>
                     <LocationOnIcon />
@@ -85,9 +83,15 @@ function Contact() {
                   <div
                     className={`${classes.overlayContent} ${classes.overlayText}`}
                   >
-                    <Typography>Koforidua - Ghana</Typography>
-                    <Typography>yankeybenneth@gmail.com</Typography>
-                    <Typography>+233 500 083 455</Typography>
+                    <Typography color="textPrimary">
+                      Koforidua - Ghana
+                    </Typography>
+                    <Typography color="textPrimary">
+                      yankeybenneth@gmail.com
+                    </Typography>
+                    <Typography color="textPrimary">
+                      0233 5000 834 55
+                    </Typography>
                   </div>
                 </div>
                 <Image

@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fontsource/abril-fatface": "^4.1.0",
-    "@fontsource/almendra-display": "^4.1.0",
+    "@fontsource/montserrat": "^4.1.0",
     "@fontsource/quicksand": "^4.1.0",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -45,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-scroll": "^1.8.2"
   }
 }
