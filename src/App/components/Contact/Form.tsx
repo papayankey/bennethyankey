@@ -22,17 +22,42 @@ function Form() {
 
   return (
     <form className={classes.form}>
-      <TextField type="text" name="name" label="Your Name" />
-      <TextField type="email" name="email" label="Email Address" />
-      <TextField type="text" name="subject" label="Subject" />
       <TextField
+        hiddenLabel
+        type="text"
+        name="name"
+        label="Your Name"
+        inputProps={{ 'aria-label': 'name' }}
+      />
+      <TextField
+        hiddenLabel
+        type="email"
+        name="email"
+        label="Email Address"
+        inputProps={{ 'aria-label': 'email' }}
+      />
+      <TextField
+        hiddenLabel
+        type="text"
+        name="subject"
+        label="Subject"
+        inputProps={{ 'aria-label': 'subject' }}
+      />
+      <TextField
+        hiddenLabel
         type="text"
         name="message"
         label="Message"
         multiline={true}
         rows={3}
+        inputProps={{ 'aria-label': 'message' }}
       />
-      <Button variant="outlined" size="large" className={classes.button}>
+      <Button
+        variant="contained"
+        size="large"
+        color="secondary"
+        className={classes.button}
+      >
         Send Message
       </Button>
     </form>
