@@ -21,9 +21,11 @@ const useStyles = makeStyles((theme: Theme) => ({
       width: '70%',
     },
   },
+  title: {
+    color: theme.palette.primary.main,
+  },
   button: {
     marginTop: theme.spacing(2),
-    letterSpacing: 2,
   },
   divider: {
     marginTop: theme.spacing(8),
@@ -34,22 +36,37 @@ function About() {
   const classes = useStyles();
 
   return (
-    <Container>
-      <Divider className={classes.divider} />
-      <div className={classes.container}>
-        <Typography variant="h5">About Me</Typography>
-        <Typography>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, veniam
-          asperiores accusamus expedita omnis, neque, perspiciatis quo
-          doloremque ipsum at nisi distinctio ea ratione culpa cumque quos
-          placeat quisquam nostrum.
-        </Typography>
-        <Button variant="outlined" size="large" className={classes.button}>
-          Get Resume
-        </Button>
-      </div>
-      <Divider />
-    </Container>
+    <section id="about">
+      <Container maxWidth="md">
+        <Divider className={classes.divider} />
+        <div className={classes.container}>
+          <Typography variant="h4" className={classes.title}>
+            About Me
+          </Typography>
+          <Typography>
+            Hi, I'm Benneth Yankey, a self-thought frontend or React Developer
+            and a high school Biology teacher from Ghana. I have experience in
+            software development and an open-source contributor. My language of
+            choice is JavaScript and Typescript.
+          </Typography>
+          <Typography>
+            I'm very enthusiastic and passionate about what I do, very time
+            conscious and work all heart out to deliver products. I'm open to
+            collaborations and love to learn and work with all developers at any
+            level.
+          </Typography>
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            className={classes.button}
+          >
+            Get Resume
+          </Button>
+        </div>
+        <Divider />
+      </Container>
+    </section>
   );
 }
 
