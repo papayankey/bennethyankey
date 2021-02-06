@@ -18,11 +18,12 @@ interface ImageProps extends CardProps {
   src: string;
   alt?: string;
   height?: number;
+  width?: number | string;
 }
 
 function Image(props: ImageProps) {
   const classes = useStyles();
-  const { src, alt, height, title, ...restProps } = props;
+  const { src, alt, height, width, title, ...restProps } = props;
 
   return (
     <Card
@@ -35,6 +36,7 @@ function Image(props: ImageProps) {
         component="img"
         alt={alt}
         height={height ?? 225}
+        width={width ?? '100%'}
         image={src}
         title={title}
       />
