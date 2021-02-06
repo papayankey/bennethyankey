@@ -5,11 +5,19 @@ import { palette } from './palette';
 import { props } from './props';
 import { typography } from './typography';
 
+const defaultTheme = createMuiTheme();
+
 const theme = createMuiTheme({
+  ...defaultTheme,
   palette,
   typography,
   props,
   overrides,
+  mixins: {
+    toolbar: {
+      minHeight: 90,
+    },
+  },
 });
 
-export { theme };
+export { theme, defaultTheme };

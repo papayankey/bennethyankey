@@ -1,4 +1,8 @@
+import { createMuiTheme } from '@material-ui/core/styles';
 import { Overrides } from '@material-ui/core/styles/overrides';
+
+// default theme
+const { breakpoints, spacing } = createMuiTheme();
 
 const overrides: Overrides = {
   MuiCssBaseline: {
@@ -6,23 +10,27 @@ const overrides: Overrides = {
       body: {
         margin: '0 !important',
         padding: '0 !important',
+        backgroundColor: '#f1fff0',
+        color: '#4b200d',
       },
     },
   },
   MuiContainer: {
     maxWidthLg: {
-      '@media (min-width: 960px)': {
+      [breakpoints.only('lg')]: {
         padding: 0,
       },
     },
   },
   MuiTextField: {
     root: {
-      padding: '10px 0',
+      padding: spacing(1, 0),
     },
   },
   MuiButton: {
     root: {
+      borderRadius: 50,
+      fontWeight: 700,
       textTransform: 'capitalize',
     },
   },
