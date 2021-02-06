@@ -14,6 +14,14 @@ const useStyles = makeStyles((theme: Theme) =>
     button: {
       marginTop: theme.spacing(4),
     },
+    textField: {
+      '& .MuiFilledInput-root:hover, & .MuiFilledInput-root.Mui-focused': {
+        backgroundColor: '#e4f9ee',
+      },
+      '& .MuiFilledInput-underline::before': {
+        borderBottom: `1px solid rgba(0,0,0,0.12)`,
+      },
+    },
   })
 );
 
@@ -23,34 +31,45 @@ function Form() {
   return (
     <form className={classes.form}>
       <TextField
+        className={classes.textField}
+        variant="filled"
         hiddenLabel
         type="text"
         name="name"
-        label="Your Name"
-        inputProps={{ 'aria-label': 'name' }}
+        placeholder="Your Name"
+        inputProps={{ 'aria-placeholder': 'Your Name', 'aria-label': 'name' }}
       />
       <TextField
+        className={classes.textField}
+        variant="filled"
         hiddenLabel
         type="email"
         name="email"
-        label="Email Address"
-        inputProps={{ 'aria-label': 'email' }}
+        placeholder="Email Address"
+        inputProps={{
+          'aria-placeholder': 'Email Address',
+          'aria-label': 'email',
+        }}
       />
       <TextField
+        className={classes.textField}
+        variant="filled"
         hiddenLabel
         type="text"
         name="subject"
-        label="Subject"
-        inputProps={{ 'aria-label': 'subject' }}
+        placeholder="Subject"
+        inputProps={{ 'aria-placeholder': 'Subject', 'aria-label': 'subject' }}
       />
       <TextField
+        className={classes.textField}
+        variant="filled"
         hiddenLabel
         type="text"
         name="message"
-        label="Message"
+        placeholder="Message"
         multiline={true}
         rows={3}
-        inputProps={{ 'aria-label': 'message' }}
+        inputProps={{ 'aria-placeholder': 'Message', 'aria-label': 'message' }}
       />
       <Button
         variant="contained"
