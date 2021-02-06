@@ -3,18 +3,21 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
-// material icons
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedIn from '@material-ui/icons/LinkedIn';
-
 // material utils
 import { makeStyles, Theme } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) => ({
+  title: {
+    fontWeight: 700,
+  },
+  subtitle: {
+    color: theme.palette.primary.main,
+    fontWeight: 700,
+    fontSize: '1.3rem',
+  },
   hero: {
-    minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight}px )`,
-    marginTop: theme.mixins.toolbar.minHeight + 'px',
+    minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
+    marginTop: theme.mixins.toolbar.minHeight,
   },
   socialIcons: {
     padding: theme.spacing(2, 0),
@@ -31,30 +34,34 @@ function Hero() {
   const classes = useStyles();
 
   return (
-    <Grid
-      container
-      direction="column"
-      justify="space-between"
-      alignItems="center"
-      className={classes.hero}
-    >
-      <Grid item></Grid>
-      <Grid
-        item
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <Typography variant="subtitle1">FRONT-END DEVELOPER</Typography>
-        <Typography variant="h4">BENNETH YANKEY</Typography>
-      </Grid>
-      <Grid item className={classes.socialIcons}>
-        <FacebookIcon className={classes.icon} />
-        <TwitterIcon className={classes.icon} />
-        <LinkedIn className={classes.icon} />
-      </Grid>
-    </Grid>
+    <section id="home">
+      <Container>
+        <Grid
+          container
+          direction="column"
+          justify="space-between"
+          alignItems="center"
+          className={classes.hero}
+        >
+          <Grid item></Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            justify="center"
+            alignItems="center"
+          >
+            <Typography variant="subtitle1" className={classes.subtitle}>
+              FRONT-END DEVELOPER
+            </Typography>
+            <Typography variant="h3" className={classes.title}>
+              BENNETH YANKEY
+            </Typography>
+          </Grid>
+          <Grid item></Grid>
+        </Grid>
+      </Container>
+    </section>
   );
 }
 

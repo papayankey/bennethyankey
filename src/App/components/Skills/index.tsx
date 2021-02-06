@@ -23,10 +23,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     card: {
       backgroundColor: 'transparent',
-      padding: theme.spacing(5, 0),
+      padding: theme.spacing(10, 3),
     },
     cardHeader: {
-      fontWeight: 'bold',
+      fontWeight: 700,
+    },
+    title: {
+      color: theme.palette.primary.main,
     },
     cardContent: {
       marginTop: theme.spacing(3),
@@ -42,9 +45,7 @@ function Skill({ id, media, header, body }: IData) {
       <Card elevation={0} className={classes.card}>
         <CardMedia>{media()}</CardMedia>
         <CardContent>
-          <Typography variant="subtitle1" className={classes.cardHeader}>
-            {header}
-          </Typography>
+          <Typography className={classes.cardHeader}>{header}</Typography>
           <Typography className={classes.cardContent}>{body}</Typography>
         </CardContent>
       </Card>
@@ -56,15 +57,21 @@ function Skills() {
   const classes = useStyles();
 
   return (
-    <Layout className={classes.container}>
-      <Typography variant="h5">What I Can Do</Typography>
-      <Typography>Here are all the services I can offer</Typography>
-      <Grid container spacing={1} style={{ marginTop: 48 }}>
-        {data.map(item => (
-          <Skill key={item.id} {...item} />
-        ))}
-      </Grid>
-    </Layout>
+    <section id="skills">
+      <Container>
+        <Layout className={classes.container}>
+          <Typography variant="h4" className={classes.title}>
+            What I can do
+          </Typography>
+          <Typography>Here are all the services I can offer</Typography>
+          <Grid container spacing={5}>
+            {data.map(item => (
+              <Skill key={item.id} {...item} />
+            ))}
+          </Grid>
+        </Layout>
+      </Container>
+    </section>
   );
 }
 
