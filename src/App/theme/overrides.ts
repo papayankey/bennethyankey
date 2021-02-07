@@ -12,6 +12,7 @@ const overrides: Overrides = {
         padding: '0 !important',
         backgroundColor: '#f1fff0',
         color: '#4b200d',
+        userSelect: 'none',
       },
     },
   },
