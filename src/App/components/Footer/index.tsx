@@ -80,7 +80,6 @@ function Footer() {
     <footer>
       <Layout className={classes.layout}>
         <Container>
-          true
           <Typography className={classes.slogan}>
             Learning, Mentoring & Building
           </Typography>
