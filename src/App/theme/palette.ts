@@ -6,6 +6,7 @@ const palette: PaletteOptions = {
   },
   primary: {
     main: '#1d8179',
+    light: '#e4f9ee',
   },
   secondary: {
     main: '#fead49',
