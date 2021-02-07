@@ -1,10 +1,8 @@
-import { CodeSVG } from './CodeSVG';
-import { ResponsiveSVG } from './ResponsiveSVG';
-import { TeachSVG } from './TeachSVG';
+import { CodeSVG, ResponsiveSVG, TeachSVG } from './svg';
 
 export interface IData {
   id: number;
-  media: () => JSX.Element;
+  media: JSX.Element;
   header: string;
   body: string;
 }
@@ -12,21 +10,21 @@ export interface IData {
 const data: IData[] = [
   {
     id: 1,
-    media: CodeSVG,
+    media: CodeSVG(),
     header: 'Design To HTML',
     body:
       "Do you have nice design in PSD, Figma or Sketch?, contact me,I'll convert them to fully responsive websites",
   },
   {
     id: 2,
-    media: ResponsiveSVG,
+    media: ResponsiveSVG(),
     header: 'Responsive Web',
     body:
       'With the rise of mobile devices, you website must be able to look good on these varied devices',
   },
   {
     id: 3,
-    media: TeachSVG,
+    media: TeachSVG(),
     header: 'Mentor',
     body:
       'I genuinely care about other developers, and help them with their craft',
