@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     textField: {
       '& .MuiFilledInput-root:hover, & .MuiFilledInput-root.Mui-focused': {
-        backgroundColor: '#e4f9ee',
+        backgroundColor: theme.palette.primary.light,
       },
       '& .MuiFilledInput-underline::before': {
-        borderBottom: `1px solid rgba(0,0,0,0.12)`,
+        borderBottom: `1px solid #1d81791f`,
       },
     },
   })
