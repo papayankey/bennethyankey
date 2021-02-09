@@ -9,7 +9,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
 // components
 import { Layout } from '../../common';
-import { PortfolioCard } from './PortfolioCard';
+import { Card } from './Card';
 import { Link } from 'react-scroll';
 
 // data
@@ -64,12 +64,24 @@ function Portfolio() {
           </Typography>
           <Grid container spacing={3}>
             {data.map((item, index) => (
-              <Grid key={index} item xs={12} sm={6} md={4}>
-                <PortfolioCard index={index} data={item} />
+              <Grid
+                key={index}
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                style={{ position: 'relative' }}
+              >
+                <Card index={index} data={item} />
               </Grid>
             ))}
           </Grid>
-          <Button variant="contained" size="large" color="secondary">
+          <Button
+            href="https://github.com/papayankey"
+            variant="contained"
+            size="large"
+            color="secondary"
+          >
             Get more on github
           </Button>
         </Container>
