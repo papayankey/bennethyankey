@@ -2,7 +2,7 @@ import { createMuiTheme } from '@material-ui/core';
 import { Overrides } from '@material-ui/core/styles/overrides';
 
 // default theme
-const { breakpoints, spacing } = createMuiTheme();
+const { spacing } = createMuiTheme();
 
 const overrides: Overrides = {
   MuiCssBaseline: {
@@ -13,13 +13,6 @@ const overrides: Overrides = {
         backgroundColor: '#f1fff0',
         color: '#4b200d',
         userSelect: 'none',
-      },
-    },
-  },
-  MuiContainer: {
-    maxWidthLg: {
-      [breakpoints.up('lg')]: {
-        padding: 0,
       },
     },
   },

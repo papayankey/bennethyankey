@@ -13,7 +13,10 @@ const typography = (palette: Palette): TypographyOptions => ({
     color: 'rgba(254, 173, 73, 1)',
   },
   body1: {
-    fontSize: '1.15rem',
+    fontSize: '1.1rem',
+    '@media (max-width: 768px)': {
+      fontSize: '1rem',
+    },
     fontWeight: 400,
   },
   body2: {

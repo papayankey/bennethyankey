@@ -19,11 +19,9 @@ const useStyles = makeStyles((theme: Theme) =>
       overflow: 'hidden',
       boxShadow: theme.shadows[5],
       '&:hover': {
-        '& $overlay, & $buttons': {
+        '& $overlay': {
           opacity: 0.97,
-        },
-        '& $summary, & $title, & $stacks span': {
-          transform: 'translate(0)',
+          animation: '2.5s cubic-bezier(.25, 1, .30, 1) $spreadForward both',
         },
       },
     },
@@ -40,9 +38,15 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: theme.palette.secondary.main,
       opacity: 0,
       transition: theme.transitions.create('opacity', {
-        duration: 600,
+        duration: theme.transitions.duration.leavingScreen,
         easing: theme.transitions.easing.easeInOut,
       }),
+      clipPath: 'circle(0 at 0px 0px)',
+    },
+    '@keyframes spreadForward': {
+      '0%': { clipPath: 'circe(400px at 0px 0px)' },
+      '50%': { clipPath: 'circle(500px at 0px 0px)' },
+      '100%': { clipPath: 'circle(600px at 0px 0px)' },
     },
     summary: {
       marginTop: theme.spacing(1),
@@ -52,27 +56,9 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.primary.main,
       fontWeight: 700,
     },
-    'position-right': {
-      transform: 'translateX(100%)',
-      transition: theme.transitions.create('transform', {
-        duration: 500,
-        easing: theme.transitions.easing.easeInOut,
-      }),
-    },
-    'position-left': {
-      transform: 'translateX(-100%)',
-      transition: theme.transitions.create('transform', {
-        duration: 500,
-        easing: theme.transitions.easing.easeInOut,
-      }),
-    },
     buttons: {
       marginTop: theme.spacing(2),
-      opacity: 0,
-      transition: theme.transitions.create('opacity', {
-        duration: 500,
-        easing: theme.transitions.easing.easeInOut,
-      }),
+      opacity: 1,
       '& .MuiButton-contained': {
         fontWeight: 700,
         '&:hover': {
@@ -114,40 +100,26 @@ interface PortfolioCardInterface {
   data: ImageInterface;
 }
 
-function PortfolioCard(props: PortfolioCardInterface) {
-  const { data, index } = props;
+function Card(props: PortfolioCardInterface) {
   const classes = useStyles();
 
+  const { data, index } = props;
   const { title, summary, stack, demo, code } = data;
 
   return (
     <div className={classes.overlayContainer}>
       <div className={classes.overlay}>
-        <Typography
-          variant="h5"
-          className={`${classes.title} ${classes['position-right']}`}
-        >
+        <Typography variant="h5" className={classes.title}>
           {formatTitle(title)}
         </Typography>
-        <Typography
-          variant="body2"
-          className={`${classes.summary} ${classes['position-left']}`}
-        >
+        <Typography variant="body2" className={classes.summary}>
           {summary}
         </Typography>
         <Typography variant="body2" className={classes.stacks}>
-          <Typography
-            variant="inherit"
-            component="span"
-            className={classes['position-right']}
-          >
+          <Typography variant="inherit" component="span">
             Stack Used
           </Typography>
-          <Typography
-            variant="inherit"
-            component="span"
-            className={classes['position-left']}
-          >
+          <Typography variant="inherit" component="span">
             {stack}
           </Typography>
         </Typography>
@@ -177,4 +149,4 @@ function PortfolioCard(props: PortfolioCardInterface) {
   );
 }
 
-export { PortfolioCard };
+export { Card };
