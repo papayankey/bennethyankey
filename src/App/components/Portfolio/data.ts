@@ -24,7 +24,7 @@ const images: ImageInterface[] = [
     summary: 'Bookmark helps manage your favourite sites',
     stack: 'React, Typescript & Material-UI',
     demo: 'https://bookmark-landing-page-six-lake.vercel.app/',
-    code: 'https://github.com/iambenbright/bookmark',
+    code: 'https://github.com/papayankey/bookmark',
   },
   {
     src: managed,
@@ -33,7 +33,7 @@ const images: ImageInterface[] = [
     summary: 'Managed makes it simple for teams to plan day-to-day tasks',
     stack: 'React & Material-UI',
     demo: 'https://managed-landing.vercel.app/',
-    code: 'https://github.com/iambenbright/managed',
+    code: 'https://github.com/papayankey/managed',
   },
   {
     src: restCountries,
@@ -43,7 +43,7 @@ const images: ImageInterface[] = [
       'Get information about countries including population, currency etc',
     stack: 'React & Styled-Component',
     demo: 'https://countries-of-the-world.vercel.app/',
-    code: 'https://github.com/iambenbright/where-in-the-world',
+    code: 'https://github.com/papayankey/where-in-the-world',
   },
   {
     src: easyBank,
@@ -53,9 +53,9 @@ const images: ImageInterface[] = [
       'EasyBank account is one-stop-shop for spending, saving etc online',
     stack: 'HTML5, CSS3 & JavaScript',
     demo:
-      'https://iambenbright.github.io/frontend-mentor-projects/easy-bank-landing-page/',
+      'https://papayankey.github.io/frontend-mentor-projects/easy-bank-landing-page/',
     code:
-      'https://github.com/iambenbright/frontend-mentor-projects/tree/master/easy-bank-landing-page',
+      'https://github.com/papayankey/frontend-mentor-projects/tree/master/easy-bank-landing-page',
   },
   {
     src: socialDashboard,
@@ -64,9 +64,9 @@ const images: ImageInterface[] = [
     summary: 'Manage your social life with all-in-one social media dashboard.',
     stack: 'HTML5, CSS3 & JavaScript',
     demo:
-      'https://iambenbright.github.io/frontend-mentor-projects/social-media-dashboard/',
+      'https://papayankey.github.io/frontend-mentor-projects/social-media-dashboard/',
     code:
-      'https://github.com/iambenbright/frontend-mentor-projects/tree/master/social-media-dashboard',
+      'https://github.com/papayankey/frontend-mentor-projects/tree/master/social-media-dashboard',
   },
 ];
 
