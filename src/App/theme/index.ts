@@ -5,10 +5,7 @@ import { palette } from './palette';
 import { props } from './props';
 import { typography } from './typography';
 
-const defaultTheme = createMuiTheme();
-
 const theme = createMuiTheme({
-  ...defaultTheme,
   palette,
   typography,
   props,
@@ -20,4 +17,4 @@ const theme = createMuiTheme({
   },
 });
 
-export { theme, defaultTheme };
+export { theme };
