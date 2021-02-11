@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       boxShadow: theme.shadows[5],
       '&:hover': {
         '& $overlay': {
-          opacity: 0.97,
-          animation: '2.5s cubic-bezier(.25, 1, .30, 1) $spreadForward both',
+          animation: '2.5s cubic-bezier(.25, 1, .30, 1) $spread both',
         },
       },
     },
@@ -36,14 +35,9 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(0, 3),
       borderRadius: theme.shape.borderRadius,
       backgroundColor: theme.palette.secondary.main,
-      opacity: 0,
-      transition: theme.transitions.create('opacity', {
-        duration: theme.transitions.duration.leavingScreen,
-        easing: theme.transitions.easing.easeInOut,
-      }),
       clipPath: 'circle(0 at 0px 0px)',
     },
-    '@keyframes spreadForward': {
+    '@keyframes spread': {
       '0%': { clipPath: 'circe(400px at 0px 0px)' },
       '50%': { clipPath: 'circle(500px at 0px 0px)' },
       '100%': { clipPath: 'circle(600px at 0px 0px)' },

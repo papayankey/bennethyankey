@@ -84,22 +84,33 @@ function Footer() {
             Learning, Mentoring & Building
           </Typography>
           <div className={classes.socialContacts}>
-            <IconButton className={classes.iconButton} aria-label="github icon">
+            <IconButton
+              href="https://github.com/papayankey"
+              target="blank"
+              className={classes.iconButton}
+              aria-label="github icon"
+            >
               <GithubIcon className={classes.githubIcon} />
             </IconButton>
             <IconButton
+              href="https://www.linkedin.com/in/benneth-yankey-23201232/"
+              target="blank"
               className={classes.iconButton}
               aria-label="linkedin icon"
             >
               <LinkedInIcon fontSize="large" />
             </IconButton>
             <IconButton
+              href="https://instagram.com/papayankey_"
+              target="blank"
               className={classes.iconButton}
               aria-label="instagram icon"
             >
               <InstagramIcon fontSize="large" />
             </IconButton>
             <IconButton
+              href="https://t.me/papa_yankey"
+              target="blank"
               className={classes.iconButton}
               aria-label="telegram icon"
             >
@@ -110,11 +121,19 @@ function Footer() {
             <Typography>Handcrafted by me</Typography>
             <Typography>
               Made with{' '}
-              <Typography component="a" href="#">
+              <Typography
+                component="a"
+                href="https://reactjs.org/"
+                target="blank"
+              >
                 React
               </Typography>{' '}
               &{' '}
-              <Typography component="a" href="#">
+              <Typography
+                component="a"
+                href="https://material-ui.com/"
+                target="blank"
+              >
                 Material-UI
               </Typography>
             </Typography>

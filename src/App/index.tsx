@@ -15,13 +15,14 @@ import {
   Contact,
   Footer,
 } from './components';
-import { Main } from './common';
+import { Main, City } from './common';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CSSBaseline />
       <NavBar />
+      <City />
       <Main>
         <Hero />
         <About />
