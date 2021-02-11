@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
       boxShadow: theme.shadows[5],
       '&:hover': {
         '& $overlay': {
-          animation: '2.5s cubic-bezier(.25, 1, .30, 1) $spread both',
+          animation: '2.5s cubic-bezier(.25, 1, .30, 1) 0.25s $spread both',
         },
       },
     },
