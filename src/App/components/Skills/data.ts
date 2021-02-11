@@ -1,30 +1,38 @@
-import { CodeSVG, ResponsiveSVG, TeachSVG } from './svg';
+// material icons
+import { SvgIconComponent } from '@material-ui/icons';
+
+// material components
+import DeveloperBoardIcon from '@material-ui/icons/DeveloperBoardOutlined';
+import LanguageIcon from '@material-ui/icons/LanguageOutlined';
+import LaptopIcon from '@material-ui/icons/LaptopMacOutlined';
 
 export interface IData {
   id: number;
-  media: JSX.Element;
+  Icon: SvgIconComponent;
   header: string;
-  body: string;
+  body: string | string[];
 }
 
 const data: IData[] = [
   {
     id: 1,
-    media: CodeSVG(),
+    Icon: DeveloperBoardIcon,
     header: 'Design To HTML',
-    body:
-      "Do you have nice design in PSD, Figma or Sketch?, contact me,I'll convert them to fully responsive websites",
+    body: [
+      'Do you have nice design in PSD, Figma or Sketch?, ',
+      ", I'll convert them to fully responsive websites",
+    ],
   },
   {
     id: 2,
-    media: ResponsiveSVG(),
+    Icon: LaptopIcon,
     header: 'Responsive Web',
     body:
       'With the rise of mobile devices, you website must be able to look good on these varied devices',
   },
   {
     id: 3,
-    media: TeachSVG(),
+    Icon: LanguageIcon,
     header: 'Mentor',
     body:
       'I genuinely care about other developers, and help them with their craft',
