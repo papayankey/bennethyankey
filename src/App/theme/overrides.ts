@@ -13,6 +13,7 @@ const overrides: Overrides = {
         backgroundColor: '#f1fff0',
         color: '#4b200d',
         userSelect: 'none',
+        overflowX: 'hidden',
       },
     },
   },
