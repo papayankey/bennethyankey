@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: 400,
       letterSpacing: '1.25px',
       marginRight: theme.spacing(4),
+      cursor: 'pointer',
+      '&:hover': {
+        color: theme.palette.primary.main,
+      },
     },
     active: {
       fontWeight: 700,
