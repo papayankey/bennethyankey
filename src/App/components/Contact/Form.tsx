@@ -34,18 +34,20 @@ function Form() {
         className={classes.textField}
         variant="filled"
         hiddenLabel
+        label="Name"
         type="text"
         name="name"
-        placeholder="Your Name"
+        placeholder="Enter your name"
         inputProps={{ 'aria-placeholder': 'Your Name', 'aria-label': 'name' }}
       />
       <TextField
         className={classes.textField}
         variant="filled"
         hiddenLabel
+        label="Email"
         type="email"
         name="email"
-        placeholder="Email Address"
+        placeholder="example@gmail.com"
         inputProps={{
           'aria-placeholder': 'Email Address',
           'aria-label': 'email',
@@ -55,21 +57,26 @@ function Form() {
         className={classes.textField}
         variant="filled"
         hiddenLabel
+        label="Subject"
         type="text"
         name="subject"
-        placeholder="Subject"
-        inputProps={{ 'aria-placeholder': 'Subject', 'aria-label': 'subject' }}
+        placeholder="What does this project involve?"
+        inputProps={{
+          'aria-placeholder': 'What does this project involve?',
+          'aria-label': 'subject',
+        }}
       />
       <TextField
         className={classes.textField}
         variant="filled"
         hiddenLabel
+        label="Message"
         type="text"
         name="message"
-        placeholder="Message"
+        placeholder="Please give detailed description of the project"
         multiline={true}
         rows={3}
-        inputProps={{ 'aria-placeholder': 'Message', 'aria-label': 'message' }}
+        inputProps={{ 'aria-placeholder': 'message', 'aria-label': 'message' }}
       />
       <Button
         variant="contained"

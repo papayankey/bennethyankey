@@ -63,12 +63,15 @@ function Contact() {
         <Container maxWidth="md">
           <Layout>
             <Typography variant="h4" className={classes.title}>
-              Let's get in touch
+              Got a project for me?
             </Typography>
-            <Typography>
-              I’m always open to discussing project or collaboration
-              opportunities.
-            </Typography>
+            <Container maxWidth="sm">
+              <Typography>
+                I'd love to hear from you, if you'd like a quote, or more
+                information about working with me, please fill out the form, and
+                I will respond as soon as possible!
+              </Typography>
+            </Container>
             <Grid container spacing={5}>
               <Grid item xs={12} md={6}>
                 <Form />
