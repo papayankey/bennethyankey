@@ -1,22 +1,13 @@
 // material components
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-
-// material icons
-import LocationOnIcon from '@material-ui/icons/LocationOnOutlined';
-import EmailIcon from '@material-ui/icons/EmailOutlined';
-import CallIcon from '@material-ui/icons/CallOutlined';
 
 // material utils
 import { makeStyles, Theme } from '@material-ui/core';
 
 // components
 import { Form } from './Form';
-import { Image, Layout } from '../../common';
-
-// image
-import googleMap from '../../assets/images/google-map.webp';
+import { Layout } from '../../common';
 
 // styles
 const useStyles = makeStyles((theme: Theme) => ({
@@ -60,52 +51,17 @@ function Contact() {
   return (
     <section id="contact">
       <Container>
-        <Container maxWidth="md">
+        <Container maxWidth="sm">
           <Layout>
             <Typography variant="h4" className={classes.title}>
               Got a project for me?
             </Typography>
-            <Container maxWidth="sm">
-              <Typography>
-                I'd love to hear from you, if you'd like a quote, or more
-                information about working with me, please fill out the form, and
-                I will respond as soon as possible!
-              </Typography>
-            </Container>
-            <Grid container spacing={5}>
-              <Grid item xs={12} md={6}>
-                <Form />
-              </Grid>
-              <Grid item xs={12} md={6} className={classes.mapGridItem}>
-                <div className={classes.mapOverlay}>
-                  <div className={classes.overlayContent}>
-                    <LocationOnIcon />
-                    <EmailIcon />
-                    <CallIcon />
-                  </div>
-                  <div
-                    className={`${classes.overlayContent} ${classes.overlayText}`}
-                  >
-                    <Typography color="textPrimary">
-                      Koforidua - Ghana
-                    </Typography>
-                    <Typography color="textPrimary">
-                      yankeybenneth@gmail.com
-                    </Typography>
-                    <Typography color="textPrimary">
-                      0233 5000 834 55
-                    </Typography>
-                  </div>
-                </div>
-                <Image
-                  src={googleMap}
-                  alt="google map"
-                  title="google map"
-                  height={400}
-                  width="100%"
-                />
-              </Grid>
-            </Grid>
+            <Typography>
+              I'd love to hear from you, if you'd like a quote, or more
+              information about working with me, please fill out the form, and I
+              will respond as soon as possible!
+            </Typography>
+            <Form />
           </Layout>
         </Container>
       </Container>
