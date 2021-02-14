@@ -29,22 +29,22 @@ async function emailService(
     });
     setIsSubmitting(true);
 
-    // response = await emailjs.send(
-    //   `${process.env.REACT_APP_SERVICE_ID}`,
-    //   `${process.env.REACT_APP_TEMPLATE_ID}`,
-    //   templateParams,
-    //   `${process.env.REACT_APP_USER_ID}`
-    // );
+    response = await emailjs.send(
+      `${process.env.REACT_APP_SERVICE_ID}`,
+      `${process.env.REACT_APP_TEMPLATE_ID}`,
+      templateParams,
+      `${process.env.REACT_APP_USER_ID}`
+    );
 
     // service simulation
-    response = await new Promise<{ status: number; text: string }>(
-      (resolve, reject) => {
-        setTimeout(function () {
-          resolve({ status: 200, text: 'OK' });
-          // reject({ status: 400, text: 'Bad Request' });
-        }, 5000);
-      }
-    );
+    // response = await new Promise<{ status: number; text: string }>(
+    //   (resolve, reject) => {
+    //     setTimeout(function () {
+    //       resolve({ status: 200, text: 'OK' });
+    //       // reject({ status: 400, text: 'Bad Request' });
+    //     }, 5000);
+    //   }
+    // );
 
     if (response.status === 200) {
       toast.success('mail is sent!', {
