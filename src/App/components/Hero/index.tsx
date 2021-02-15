@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   hero: {
     minHeight: `calc(100vh - ${theme.mixins.toolbar.minHeight}px)`,
     marginTop: theme.mixins.toolbar.minHeight,
-    backgroundColor: theme.palette.common.white,
+    background: `linear-gradient(to bottom, ${theme.palette.common.white} 80vh, ${theme.palette.background.default})`,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
