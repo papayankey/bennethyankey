@@ -56,6 +56,8 @@ function About() {
               any level.
             </Typography>
             <Button
+              href="https://drive.google.com/file/d/1ydjdQwhLnGBIL77wLUBSWemLqN-KC7D2/view?usp=sharing"
+              target="blank"
               variant="contained"
               size="large"
               color="secondary"
