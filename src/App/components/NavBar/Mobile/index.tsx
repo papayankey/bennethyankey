@@ -83,7 +83,7 @@ function MobileNavigation(props: MobileProps) {
                 </Button>
               </nav>
             </Grid>
-            <Grid item>
+            <Grid item className={classes.socialContact}>
               <SocialContact />
             </Grid>
           </Grid>

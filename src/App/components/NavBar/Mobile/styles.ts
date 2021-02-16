@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundRepeat: 'repeat no-repeat',
       height: 140,
       marginTop: 20,
+      '@media (max-width: 320px)': {
+        marginTop: 0,
+      },
     },
     backdrop: {
       top: 0,
@@ -66,6 +69,11 @@ const useStyles = makeStyles((theme: Theme) =>
       '0%': { clipPath: 'circe(700px at 0px 0px)' },
       '50%': { clipPath: 'circle(1000px at 0px 0px)' },
       '100%': { clipPath: 'circle(2000px at 0px 0px)' },
+    },
+    socialContact: {
+      '@media (max-width: 320px)': {
+        transform: 'translateY(15px)',
+      },
     },
   })
 );
