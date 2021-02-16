@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
       right: 0,
       height: '100%',
       clipPath: 'circle(0 at 0px 0px)',
-      background: `linear-gradient(to bottom, ${theme.palette.primary.main} 90vh, ${theme.palette.secondary.main})`,
+      background: `linear-gradient(to bottom, ${theme.palette.primary.main} 90vh, ${theme.palette.secondary.light})`,
       zIndex: 1500,
     },
     animate: {
