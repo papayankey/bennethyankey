@@ -78,6 +78,7 @@ function Portfolio() {
           </Grid>
           <Button
             href="https://github.com/papayankey"
+            target="blank"
             variant="contained"
             size="large"
             color="secondary"
