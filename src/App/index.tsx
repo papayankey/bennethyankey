@@ -15,14 +15,14 @@ import {
   Contact,
   Footer,
 } from './components';
-import { Main, City } from './common';
+import { Main } from './common';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CSSBaseline />
       <NavBar />
-      <City />
       <Main>
         <Hero />
         <About />
@@ -31,6 +31,7 @@ function App() {
         <Contact />
       </Main>
       <Footer />
+      <Toaster position="top-center" />
     </ThemeProvider>
   );
 }

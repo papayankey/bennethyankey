@@ -8,12 +8,12 @@ const overrides: Overrides = {
   MuiCssBaseline: {
     '@global': {
       body: {
-        margin: '0 !important',
-        padding: '0 !important',
+        margin: 0,
+        padding: 0,
         backgroundColor: '#f1fff0',
         color: '#4b200d',
         userSelect: 'none',
-        overflowX: 'hidden',
+        position: 'relative',
       },
     },
   },

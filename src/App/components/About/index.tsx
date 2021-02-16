@@ -39,7 +39,6 @@ function About() {
     <section id="about">
       <Container>
         <Container maxWidth="md">
-          <Divider className={classes.divider} />
           <div className={classes.container}>
             <Typography variant="h4" className={classes.title}>
               About Me
@@ -65,8 +64,8 @@ function About() {
               Get Resume
             </Button>
           </div>
-          <Divider />
         </Container>
+        <Divider />
       </Container>
     </section>
   );

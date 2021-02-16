@@ -1,3 +1,6 @@
+// react
+import { Fragment } from 'react';
+
 // material components
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -12,6 +15,7 @@ import { makeStyles, Theme, createStyles, useTheme } from '@material-ui/core';
 
 // components
 import { Layout } from '../../common';
+import { Link } from 'react-scroll';
 
 // data
 import { data, IData } from './data';
@@ -48,10 +52,18 @@ const useStyles = makeStyles((theme: Theme) =>
     cardBody: {
       marginTop: theme.spacing(3),
     },
+    contact: {
+      color: theme.palette.primary.main,
+      fontWeight: 700,
+      '&:hover': {
+        textDecoration: 'underline',
+        cursor: 'pointer',
+      },
+    },
   })
 );
 
-function Skill({ id, media, header, body }: IData) {
+function Skill({ id, Icon, header, body }: IData) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -63,18 +75,36 @@ function Skill({ id, media, header, body }: IData) {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            width={100}
-            height={100}
-            borderRadius="50px"
-            bgcolor={theme.palette.primary.light}
-            boxShadow="inset 0px 0px 4px #1d81791f"
+            width={80}
+            height={80}
+            borderRadius={theme.shape.borderRadius + 46}
+            bgcolor={theme.palette.primary.main}
+            color={theme.palette.common.white}
           >
-            {media}
+            <Icon fontSize="large" />
           </Box>
         </CardMedia>
         <CardContent className={classes.cardContent}>
           <Typography className={classes.cardHeader}>{header}</Typography>
-          <Typography className={classes.cardBody}>{body}</Typography>
+          <Typography className={classes.cardBody}>
+            {Array.isArray(body) ? (
+              <Fragment>
+                {body[0]}
+                <Link
+                  className={classes.contact}
+                  to="contact"
+                  smooth={true}
+                  spy={true}
+                  offset={-50}
+                >
+                  contact me
+                </Link>
+                {body[1]}
+              </Fragment>
+            ) : (
+              body
+            )}
+          </Typography>
         </CardContent>
       </Card>
     </Grid>
