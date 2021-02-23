@@ -1,3 +1,3 @@
 ## Portfolio
 
-This is my portfolio created with React, Typescript and Material-UI
+This is my portfolio website
