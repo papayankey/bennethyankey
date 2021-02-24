@@ -2,7 +2,7 @@
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
 // svg
-import AudioBar from '../../../assets/audio-bar.svg';
+const AudioBar = '/images/audio-bars.svg';
 
 // styles
 const useStyles = makeStyles((theme: Theme) =>

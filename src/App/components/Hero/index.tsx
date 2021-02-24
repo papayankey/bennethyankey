@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import { makeStyles, Theme } from '@material-ui/core';
 
 // svg
-import AudioBar from '../../assets/audio-bar.svg';
+const AudioBar = '/images/audio-bar.svg';
 
 // styles
 const useStyles = makeStyles((theme: Theme) => ({
