@@ -1,8 +1,7 @@
 // material utils
 import { makeStyles, Theme, createStyles } from '@material-ui/core';
 
-// svg
-const AudioBar = '/images/audio-bars.svg';
+const audioBars = '/images/audio-bar.svg';
 
 // styles
 const useStyles = makeStyles((theme: Theme) =>
@@ -42,7 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.secondary.main,
     },
     audioBar: {
-      background: `url(${AudioBar})`,
+      background: `url(${audioBars})`,
       backgroundPosition: 'bottom center',
       backgroundSize: 100,
       backgroundRepeat: 'repeat no-repeat',
@@ -66,7 +65,6 @@ const useStyles = makeStyles((theme: Theme) =>
       animation: '2.5s cubic-bezier(.25, 1, .30, 1) 0.25s $spread both',
     },
     '@keyframes spread': {
-      '0%': { clipPath: 'circe(700px at 0px 0px)' },
       '50%': { clipPath: 'circle(1000px at 0px 0px)' },
       '100%': { clipPath: 'circle(2000px at 0px 0px)' },
     },
